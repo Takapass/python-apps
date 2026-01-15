@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>work05 index</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP"; padding: 24px; }
+    header { margin-bottom: 20px; }
+    .container { max-width: 800px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>work05 アプリのトップ</h1>
+      <p>ようこそ！これはテンプレートで表示しているページです。</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>現在のユーザー:</h2>
+        <p>{% if user.is_authenticated %}{{ user.username }} さん{% else %}ログインしていません{% endif %}</p>
+      </section>
+
+      <section>
+        <h2>サンプルデータ</h2>
+        <ul>
+          {% for item in items %}
+            <li>{{ item }}</li>
+          {% empty %}
+            <li>データはありません</li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
